@@ -1,8 +1,10 @@
 package com.jetbrains;
 
-public class Main {
+import java.io.IOException;
 
-    public static void main(String[] args) {
-	// write your code here
+public class Main {
+    public static void main(String[] args) throws IOException {
+        Run app = new Run(args);
+        app.runApp();;
     }
 }
