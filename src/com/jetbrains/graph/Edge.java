@@ -9,7 +9,4 @@ class Edge {
         weight = argWeight;
     }
 
-    public void addWeight(int value){
-        weight += value;
-    }
 }

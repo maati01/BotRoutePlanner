@@ -12,7 +12,7 @@ public class Vertex extends Vector2D implements Comparable<Vertex> {
     private double containerValue = 0;
     private boolean isContainer = false;
 
-    public Vertex(int argName,int x, int y) {
+    public Vertex(int argName, int x, int y) {
         super(x, y);
         index = argName;
     }
@@ -22,14 +22,14 @@ public class Vertex extends Vector2D implements Comparable<Vertex> {
         this.isContainer = true;
     }
 
-    public boolean getIsContainer(){
+    public boolean getIsContainer() {
         return this.isContainer;
     }
+
     public double getContainerValue() {
         return containerValue;
     }
 
-    //    public int toString() { return name; }
     public int compareTo(Vertex other) {
         return Double.compare(minDistance, other.minDistance);
     }

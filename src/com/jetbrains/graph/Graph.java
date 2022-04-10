@@ -1,10 +1,8 @@
 package com.jetbrains.graph;
 
-import com.jetbrains.Cell;
 import com.jetbrains.Grid;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Graph {
     private Vertex[][] graph;
@@ -16,23 +14,6 @@ public class Graph {
         height = grid.getGrid().size();
         this.graph = new Vertex[height][width];
         createGraph(grid);
-
-//        Dijkstra algo = new Dijkstra();
-//        Dijkstra algo1 = new Dijkstra();
-//        algo.computePaths(graph[1][1],graph[2][3]);
-//
-////        for(Vertex v: algo.getShortestPathTo(graph[2][3])){
-////            System.out.println(v.index);
-////
-////        }
-//        System.out.println("Distance to " + graph[2][3].index + ": " + graph[2][3].minDistance);
-//        createGraph(grid);
-//        algo1.computePaths(graph[2][3],graph[0][0]);
-////        for(Vertex v: algo1.getShortestPathTo(graph[0][0])){
-////            System.out.println(v.index);
-////        }
-//
-//        System.out.println("Distance to " + graph[0][0].index + ": " + graph[0][0].minDistance);
     }
 
     public Vertex[][] getGraph() {
@@ -65,7 +46,6 @@ public class Graph {
                     edges.add(new Edge(graph[up][x],Math.max(grid.getGrid().get(y).get(x).getType().getV(),
                             grid.getGrid().get(up).get(x).getType().getV())));
                 }
-
                 if(down < height){
                     edges.add(new Edge(graph[down][x],Math.max(grid.getGrid().get(y).get(x).getType().getV(),
                             grid.getGrid().get(down).get(x).getType().getV())));
