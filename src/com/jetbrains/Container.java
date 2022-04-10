@@ -6,7 +6,7 @@ public class Container extends Vector2D{
 
     public Container(int x, int y, int layer){
         super(x,y);
-        this.vector2D = new Vector2D(x,y);
+//        this.vector2D = new Vector2D(x,y);
         this.layer = layer;
     }
 }

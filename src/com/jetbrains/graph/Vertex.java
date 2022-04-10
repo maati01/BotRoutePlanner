@@ -1,8 +1,10 @@
 package com.jetbrains.graph;
 
+import com.jetbrains.Vector2D;
+
 import java.util.ArrayList;
 
-class Vertex implements Comparable<Vertex> {
+public class Vertex extends Vector2D implements Comparable<Vertex> {
     public final int index;
     public ArrayList<Edge> adjacencies;
     public double minDistance = Double.POSITIVE_INFINITY;
@@ -10,7 +12,8 @@ class Vertex implements Comparable<Vertex> {
     private double containerValue = 0;
     private boolean isContainer = false;
 
-    public Vertex(int argName) {
+    public Vertex(int argName,int x, int y) {
+        super(x, y);
         index = argName;
     }
 

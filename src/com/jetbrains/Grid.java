@@ -21,8 +21,8 @@ public class Grid {
         return this.grid;
     }
 
-    public HashMap<Integer, List<Container>> getContainers(){
-        return this.containers;
+    public List<Container> getContainers(int module){
+        return this.containers.get(module);
     }
 
     private void initializeGrid(ArrayList<String> inputList){
