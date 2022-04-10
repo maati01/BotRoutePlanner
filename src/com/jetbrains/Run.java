@@ -1,5 +1,7 @@
 package com.jetbrains;
 
+import com.jetbrains.graph.Graph;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,6 +19,8 @@ public class Run {
     public void runApp() throws IOException {
         ArrayList<String> inputList = readInput(input);
         Grid grid = new Grid(inputList);
+        Graph graph = new Graph(grid);
+
     }
 
     private ArrayList<String> readInput(String[] input) throws IOException {
