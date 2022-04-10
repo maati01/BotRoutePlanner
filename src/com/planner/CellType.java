@@ -1,4 +1,4 @@
-package com.jetbrains;
+package com.planner;
 
 public enum CellType {
     H(0.5),

@@ -1,6 +1,6 @@
-package com.jetbrains.graph;
+package com.planner.graph;
 
-import com.jetbrains.Grid;
+import com.planner.Grid;
 
 import java.util.ArrayList;
 

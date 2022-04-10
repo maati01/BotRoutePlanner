@@ -1,4 +1,4 @@
-package com.jetbrains.graph;
+package com.planner.graph;
 
 class Edge {
     public final Vertex target;

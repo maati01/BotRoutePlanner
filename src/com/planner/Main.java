@@ -1,4 +1,4 @@
-package com.jetbrains;
+package com.planner;
 
 import java.io.IOException;
 

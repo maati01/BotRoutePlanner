@@ -1,4 +1,4 @@
-package com.jetbrains;
+package com.planner;
 
 public class Vector2D {
     int x;

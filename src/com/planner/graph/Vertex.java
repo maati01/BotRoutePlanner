@@ -1,6 +1,6 @@
-package com.jetbrains.graph;
+package com.planner.graph;
 
-import com.jetbrains.Vector2D;
+import com.planner.Vector2D;
 
 import java.util.ArrayList;
 

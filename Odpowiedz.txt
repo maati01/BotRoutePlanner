@@ -1,0 +1,9 @@
+W sytacji gdy grid będzie posiadał wiele stacji odbiorczych wystarczy obliczyć czas
+ze wszystkich kontenerów do stacji odbiorczych. W moim rozwiązaniu używam algorytmu Dijkstry, a więc
+należy uruchomić ten algorytm dla każdego konteneru i stacji roboczych. Zmiany można dokonać
+w klasie Run. Z racji, że algorytm Dijsktry ma złożoność O(V + ELogV) (gdzie E to liczba krawędzi
+,a V liczba wierzchołków), gdy obliczmy drogę dla k kontenerów oraz s stacji złożoność wzrośnie
+do O(k*s*(V + ELogV)). 
+W naszym przypadku liczba wierzchołków to x*y (szerokość i wysokość gridu), natomiast
+liczba krawędzi to 4*x*y.
+Ostatecznie w notacji O złożoność wyniesie O(k*s*(x*y + x*y*log(x*y))).

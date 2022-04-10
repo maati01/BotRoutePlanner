@@ -1,8 +1,8 @@
-package com.jetbrains;
+package com.planner;
 
-import com.jetbrains.graph.Dijkstra;
-import com.jetbrains.graph.Graph;
-import com.jetbrains.graph.Vertex;
+import com.planner.graph.Dijkstra;
+import com.planner.graph.Graph;
+import com.planner.graph.Vertex;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -36,7 +36,7 @@ public class Run {
             System.out.println(v.getX() + " " + v.getY());
         }
     }
-
+    
     private ArrayList<String> readInput(String input) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(input));
         String str;

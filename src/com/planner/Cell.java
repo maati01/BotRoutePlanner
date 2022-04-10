@@ -1,4 +1,4 @@
-package com.jetbrains;
+package com.planner;
 
 public class Cell extends Vector2D {
     CellType type;

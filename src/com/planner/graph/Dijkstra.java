@@ -1,4 +1,4 @@
-package com.jetbrains.graph;
+package com.planner.graph;
 
 import java.util.*;
 
