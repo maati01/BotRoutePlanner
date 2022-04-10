@@ -1,6 +1,7 @@
 package com.jetbrains;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -42,13 +43,19 @@ public class Grid {
                 }
                 containers.get(Integer.parseInt(temporary[0].substring(1))).add(new Container(Integer.parseInt(temporary[1]),
                         Integer.parseInt(temporary[2]),Integer.parseInt(temporary[3])));
+                grid.get(Integer.parseInt(temporary[2])).get(Integer.parseInt(temporary[1])).setContainer();
+                grid.get(Integer.parseInt(temporary[2])).get(Integer.parseInt(temporary[1])).setDepth(Integer.parseInt(temporary[3]));
             }else{
                 if(!containers.containsKey(Integer.parseInt(temporary[0]))){
                     containers.put(Integer.parseInt(temporary[0]), new ArrayList<>());
                 }
                 containers.get(Integer.parseInt(temporary[0])).add(new Container(Integer.parseInt(temporary[1]),
                         Integer.parseInt(temporary[2]),Integer.parseInt(temporary[3])));
+                grid.get(Integer.parseInt(temporary[2])).get(Integer.parseInt(temporary[1])).setContainer();
+                grid.get(Integer.parseInt(temporary[2])).get(Integer.parseInt(temporary[1])).setDepth(Integer.parseInt(temporary[3]));
             }
+
         }
+
     }
 }

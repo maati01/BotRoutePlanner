@@ -20,10 +20,21 @@ public class Graph {
         createGraph(grid);
 
         Dijkstra algo = new Dijkstra();
-        algo.computePaths(graph[0][0]);
-        for(Vertex v: algo.getShortestPathTo(graph[2][3])){
-            System.out.println(v.index);
-        };
+        Dijkstra algo1 = new Dijkstra();
+        algo.computePaths(graph[1][1],graph[2][3]);
+
+//        for(Vertex v: algo.getShortestPathTo(graph[2][3])){
+//            System.out.println(v.index);
+//
+//        }
+        System.out.println("Distance to " + graph[2][3].index + ": " + graph[2][3].minDistance);
+        createGraph(grid);
+        algo1.computePaths(graph[2][3],graph[0][0]);
+//        for(Vertex v: algo1.getShortestPathTo(graph[0][0])){
+//            System.out.println(v.index);
+//        }
+
+        System.out.println("Distance to " + graph[0][0].index + ": " + graph[0][0].minDistance);
     }
 
     private void createGraph(Grid grid){
@@ -45,19 +56,27 @@ public class Graph {
                 int left = x - 1;
 
                 if(up >= 0){
-                    edges.add(new Edge(graph[up][x],grid.getGrid().get(y).get(x).getType().getV()));
+                    edges.add(new Edge(graph[up][x],Math.max(grid.getGrid().get(y).get(x).getType().getV(),
+                            grid.getGrid().get(up).get(x).getType().getV())));
                 }
 
                 if(down < height){
-                    edges.add(new Edge(graph[down][x],grid.getGrid().get(y).get(x).getType().getV()));
+                    edges.add(new Edge(graph[down][x],Math.max(grid.getGrid().get(y).get(x).getType().getV(),
+                            grid.getGrid().get(down).get(x).getType().getV())));
                 }
                 if(left >= 0){
-                    edges.add(new Edge(graph[y][left],grid.getGrid().get(y).get(x).getType().getV()));
+                    edges.add(new Edge(graph[y][left],Math.max(grid.getGrid().get(y).get(x).getType().getV(),
+                            grid.getGrid().get(y).get(left).getType().getV())));
                 }
                 if(right < width){
-                    edges.add(new Edge(graph[y][right],grid.getGrid().get(y).get(x).getType().getV()));
+                    edges.add(new Edge(graph[y][right],Math.max(grid.getGrid().get(y).get(x).getType().getV(),
+                            grid.getGrid().get(y).get(right).getType().getV())));
                 }
                 graph[y][x].adjacencies = edges;
+                if(grid.getGrid().get(y).get(x).getContainer()){
+                    graph[y][x].setContainerValue(grid.getGrid().get(y).get(x).calculateTimeForContainer());
+                }
+
 //                if(x == 0 && y == 0){
 //                    edges.add(new Edge(graph[y][x+1],grid.getGrid().get(x).get(y).getType().getV()));
 //                    edges.add(new Edge(graph[y+1][x],grid.getGrid().get(x).get(y).getType().getV()));
